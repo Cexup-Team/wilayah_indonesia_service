@@ -31,12 +31,12 @@ This service using "MySql" to stored wilayah indonesia has been searched by user
 
 To connected to this endpoint please ensure your base_url is "localhost:3000" or you can adjust your own port in main.go file
 
-Get Movie  ( GET )
+Get provinsi  ( GET )
 ```sh
 {base_url}/provinsi
 ```
 
-Show Movie ( GET )
+Show by wilayah_id ( GET )
 ```sh
 {base_url}/wilayah/:wilayah_id
 ```
