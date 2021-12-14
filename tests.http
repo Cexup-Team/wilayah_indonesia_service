@@ -1,0 +1,10 @@
+### Get All wilayah
+GET http://localhost:3000/api/provinsi
+accept: application/json
+Content-Type: application/json
+
+
+### Find Wilayah
+GET http://localhost:3000/api/wilayah/11
+Accept: application/json
+Content-Type: application/application/json
