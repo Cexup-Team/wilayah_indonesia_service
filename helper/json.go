@@ -1,9 +1,9 @@
 package helper
 
 import (
-	"api-test/model/web"
 	"encoding/json"
 	"net/http"
+	"wilayah_indonesia_service/model/web"
 )
 
 func WriteToRequestBody(request *http.Request, result interface{}) {

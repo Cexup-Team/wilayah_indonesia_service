@@ -1,11 +1,11 @@
 package services
 
 import (
-	"api-test/helper"
-	"api-test/model/web"
-	"api-test/repository"
 	"context"
 	"database/sql"
+	"wilayah_indonesia_service/helper"
+	"wilayah_indonesia_service/model/web"
+	"wilayah_indonesia_service/repository"
 
 	"github.com/go-playground/validator"
 )

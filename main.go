@@ -1,12 +1,12 @@
 package main
 
 import (
-	"api-test/app"
-	"api-test/controller"
-	"api-test/helper"
-	"api-test/repository"
-	"api-test/services"
 	"net/http"
+	"wilayah_indonesia_service/app"
+	"wilayah_indonesia_service/controller"
+	"wilayah_indonesia_service/helper"
+	"wilayah_indonesia_service/repository"
+	"wilayah_indonesia_service/services"
 
 	"github.com/go-playground/validator"
 	"github.com/julienschmidt/httprouter"
@@ -26,12 +26,12 @@ func main() {
 	router := httprouter.New()
 
 	// router list
-	router.GET("/api/provinsi", regionController.FindAll)
-	router.GET("/api/wilayah/:wilayah_id", regionController.Find)
+	router.GET("/wilayah/api", regionController.FindAll)
+	router.GET("/wilayah/api/:wilayah_id", regionController.Find)
 
 	// running server
 	server := http.Server{
-		Addr:    "localhost:3000",
+		Addr:    ":3000",
 		Handler: router,
 	}
 

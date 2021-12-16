@@ -1,8 +1,8 @@
 package helper
 
 import (
-	"api-test/model/domain"
-	"api-test/model/web"
+	"wilayah_indonesia_service/model/domain"
+	"wilayah_indonesia_service/model/web"
 )
 
 func ToRegionResponse(region domain.Region) web.RegionResponse {

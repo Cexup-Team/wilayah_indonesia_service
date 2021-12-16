@@ -1,11 +1,12 @@
 package repository
 
 import (
-	"api-test/helper"
-	"api-test/model/domain"
 	"context"
 	"database/sql"
 	"fmt"
+	"strconv"
+	"wilayah_indonesia_service/helper"
+	"wilayah_indonesia_service/model/domain"
 )
 
 type RegionRepositoryImpl struct {
@@ -16,7 +17,7 @@ func NewRegionRepository() RegionRepository {
 }
 
 func (c *RegionRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []domain.Region {
-	SQL := "SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode) < 3"
+	SQL := "SELECT * FROM wilayah WHERE CHAR_LENGTH(kode) < 3"
 	row, err := tx.Query(SQL)
 	helper.PanicIfError(err)
 
@@ -44,8 +45,8 @@ func (c *RegionRepositoryImpl) Find(ctx context.Context, tx *sql.Tx, id string) 
 		n = 13
 	}
 
-	SQL := "SELECT * FROM wilayah_2020 WHERE LEFT(kode, ? )= ? AND CHAR_LENGTH(kode)=? ORDER BY nama"
-	row, err := tx.QueryContext(ctx, SQL, len(id), id, n)
+	SQL := "SELECT * FROM wilayah WHERE LEFT(kode, $1 )= $2 AND CHAR_LENGTH(kode)=$3 ORDER BY nama"
+	row, err := tx.QueryContext(ctx, SQL, strconv.Itoa(len(id)), id, strconv.Itoa(n))
 	helper.PanicIfError(err)
 
 	var regions []domain.Region

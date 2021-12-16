@@ -1,9 +1,9 @@
 package repository
 
 import (
-	"api-test/model/domain"
 	"context"
 	"database/sql"
+	"wilayah_indonesia_service/model/domain"
 )
 
 type RegionRepository interface {

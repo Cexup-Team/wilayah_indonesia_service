@@ -1,8 +1,8 @@
 package services
 
 import (
-	"api-test/model/web"
 	"context"
+	"wilayah_indonesia_service/model/web"
 )
 
 type RegionService interface {

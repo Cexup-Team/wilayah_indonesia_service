@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"api-test/helper"
-	"api-test/model/web"
-	"api-test/services"
 	"net/http"
+	"wilayah_indonesia_service/helper"
+	"wilayah_indonesia_service/model/web"
+	"wilayah_indonesia_service/services"
 
 	"github.com/julienschmidt/httprouter"
 )
