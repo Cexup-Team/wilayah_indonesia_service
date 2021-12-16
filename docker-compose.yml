@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  wilayah_indonesia_service:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: wilayah_indonesia_service
+    networks:
+      - app
+
+networks:
+  app:
+    external: true
