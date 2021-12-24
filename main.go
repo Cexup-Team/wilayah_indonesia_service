@@ -26,8 +26,8 @@ func main() {
 	router := httprouter.New()
 
 	// router list
-	router.GET("/wilayah/api", regionController.FindAll)
-	router.GET("/wilayah/api/:wilayah_id", regionController.Find)
+	router.GET("/api/wilayah", regionController.FindAll)
+	router.GET("/api/wilayah/:wilayah_id", regionController.Find)
 
 	// running server
 	server := http.Server{

@@ -18,6 +18,7 @@ func NewRegionController(services services.RegionService) RegionController {
 }
 
 func (c *RegionControllerImpl) FindAll(writer http.ResponseWriter, request *http.Request, param httprouter.Params) {
+	// helper.Cors(writer)
 	regionResponse := c.service.FindAll(request.Context())
 	webResponse := web.WebResponse{
 		Code:   200,
@@ -29,6 +30,7 @@ func (c *RegionControllerImpl) FindAll(writer http.ResponseWriter, request *http
 }
 
 func (c *RegionControllerImpl) Find(writer http.ResponseWriter, request *http.Request, param httprouter.Params) {
+	// helper.Cors(writer)
 	id := param.ByName("wilayah_id")
 	RegionResponse := c.service.Find(request.Context(), id)
 	webResponse := web.WebResponse{
