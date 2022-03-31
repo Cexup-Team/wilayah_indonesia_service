@@ -19,8 +19,6 @@ Kode dan Data Wilayah Administrasi Pemerintahah Indonesia sesuai Permendagri No 
     ├── main
     ├── readme
     └── tests
-     
-    
 
 ### Database
 
@@ -41,3 +39,12 @@ Show by wilayah_id ( GET )
 {base_url}/wilayah/:wilayah_id
 ```
 
+### Note
+
+if you face an error when building this service:
+```
+error obtaining vcs status: exec: "git": executable file not found in $path use -buildvcs=false to disable vcs stamping.
+```
+you must delete your .git configuration file and then try again
+     
+    
