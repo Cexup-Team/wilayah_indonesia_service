@@ -10,6 +10,7 @@ import (
 
 	"github.com/go-playground/validator"
 	"github.com/julienschmidt/httprouter"
+	"github.com/rs/cors"
 )
 
 func Hello(writer http.ResponseWriter, request *http.Request, param httprouter.Params) {
@@ -29,10 +30,11 @@ func main() {
 	router.GET("/api/wilayah", regionController.FindAll)
 	router.GET("/api/wilayah/:wilayah_id", regionController.Find)
 
+	handler := cors.Default().Handler(router)
 	// running server
 	server := http.Server{
 		Addr:    ":3000",
-		Handler: router,
+		Handler: handler,
 	}
 
 	err := server.ListenAndServe()
